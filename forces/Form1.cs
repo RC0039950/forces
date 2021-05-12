@@ -41,7 +41,35 @@ namespace forces
             return (Math.Acos(x) * 180 / Math.PI);
         }
 
+        private void TextBox1_TextChanged_1(object sender, EventArgs e)
+        {
 
+        }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //read force and angle from textboxes
+                double force = double.Parse(textBox1.Text);
+                double angle = double.Parse(textBox2.Text);
+                //
+                double Fx = force * cos(angle);
+                double Fy = force * sin(angle);
+                //d
+                label1.Text = "Fx = " + Fx;
+                label2.Text = "Fy = " + Fy;
+            }
+            catch
+            {
+                // show error message on screen if fail
+                MessageBox.Show("D'oh!");
+            }
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
